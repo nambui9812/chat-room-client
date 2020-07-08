@@ -1,38 +1,49 @@
 .App {
-  text-align: center;
+  height: 100%;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.Home {
+  margin: 50px;
+  padding: 20px;
+  border: 1px solid black;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.signin-menu, .signup-menu {
+  display: inline-block;
+  padding: 10px 20px 10px 20px;
+  border: 1px solid rgb(221, 104, 104);
+  transition-duration: 0.2s;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.signup-menu {
+  margin-left: 5px;
+}
+
+.signin-menu:hover, .signup-menu:hover {
+  cursor: pointer;
   color: white;
+  background-color: rgb(221, 104, 104);
 }
 
-.App-link {
-  color: #61dafb;
+.form {
+  margin-top: 40px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.inputs {
+  margin-bottom: 20px;
+}
+
+.submit-button {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: large;
+  color: white;
+  background-color: rgb(221, 104, 104);
+  border: none;
+  transition-duration: 0.2s;
+}
+
+.submit-button:hover {
+  cursor: pointer;
+  background-color: rgb(250, 96, 96);
 }
