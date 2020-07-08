@@ -2,13 +2,20 @@ import React from 'react';
 import './App.css';
 
 import Home from './conponents/Home';
+import Main from './conponents/Main';
 
-function App() {
-  return (
-    <div className="App">
-      <Home />
-    </div>
-  );
-}
+export default class App extends React.Component {
 
-export default App;
+	constructor(props) {
+		super(props);
+	}
+
+	render() {
+		return (
+			<div className="App">
+				<Home />
+				<Main />
+			</div>
+		)
+	}
+};
