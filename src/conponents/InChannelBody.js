@@ -1,5 +1,8 @@
 import React from 'react';
 
+import ChatWindow from './ChatWindow';
+import Members from './Members';
+
 export default class InChannelBody extends React.Component {
 
     constructor(props) {
@@ -9,7 +12,8 @@ export default class InChannelBody extends React.Component {
     render() {
         return (
             <div className="InChannelBody">
-                This is channel body
+                <ChatWindow />
+                <Members />
             </div>
         )
     }

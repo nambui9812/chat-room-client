@@ -1,53 +1,171 @@
+.dark-theme {
+	--header-primary: #fff;
+    --header-secondary: #b9bbbe;
+    --text-normal: #dcddde;
+    --text-muted: #72767d;
+    --text-link: #00b0f4;
+    --channels-default: #8e9297;
+    --interactive-normal: #b9bbbe;
+    --interactive-hover: #dcddde;
+    --interactive-active: #fff;
+    --interactive-muted: #4f545c;
+    --background-primary: #36393f;
+    --background-secondary: #2f3136;
+    --background-secondary-alt: #292b2f;
+    --background-tertiary: #202225;
+    --background-accent: #4f545c;
+    --background-floating: #18191c;
+    --background-mobile-primary: #36393f;
+    --background-mobile-secondary: #2f3136;
+    --background-modifier-hover: rgba(79,84,92,0.16);
+    --background-modifier-active: rgba(79,84,92,0.24);
+    --background-modifier-selected: rgba(79,84,92,0.32);
+    --background-modifier-accent: hsla(0,0%,100%,0.06);
+    --background-mentioned: rgba(250,166,26,0.05);
+    --background-mentioned-hover: rgba(250,166,26,0.08);
+    --background-message-hover: rgba(4,4,5,0.07);
+    --scrollbar-thin-thumb: #202225;
+    --scrollbar-thin-track: transparent;
+    --scrollbar-auto-thumb: #202225;
+    --scrollbar-auto-track: #2e3338;
+    --scrollbar-auto-scrollbar-color-thumb: #202225;
+    --scrollbar-auto-scrollbar-color-track: #2f3136;
+    --elevation-stroke: 0 0 0 1px rgba(4,4,5,0.15);
+    --elevation-low: 0 1px 0 rgba(4,4,5,0.2),0 1.5px 0 rgba(6,6,7,0.05),0 2px 0 rgba(4,4,5,0.05);
+    --elevation-medium: 0 4px 4px rgba(0,0,0,0.16);
+    --elevation-high: 0 8px 16px rgba(0,0,0,0.24);
+    --logo-primary: #fff;
+    --focus-primary: #00b0f4;
+    --guild-header-text-shadow: 0 1px 1px rgba(0,0,0,0.4);
+    --channeltextarea-background: #40444b;
+    --activity-card-background: #202225;
+    --textbox-markdown-syntax: #8e9297;
+    --deprecated-card-bg: rgba(32,34,37,0.6);
+    --deprecated-card-editable-bg: rgba(32,34,37,0.3);
+    --deprecated-store-bg: #36393f;
+    --deprecated-quickswitcher-input-background: #72767d;
+    --deprecated-quickswitcher-input-placeholder: hsla(0,0%,100%,0.3);
+    --deprecated-text-input-bg: rgba(0,0,0,0.1);
+    --deprecated-text-input-border: rgba(0,0,0,0.3);
+    --deprecated-text-input-border-hover: #040405;
+    --deprecated-text-input-border-disabled: #202225;
+    --deprecated-text-input-prefix: #dcddde;
+}
+
 .App {
-  height: 100%;
+	height: 100%;
 }
 
 .Home {
-  margin: 50px;
-  padding: 20px;
-  border: 1px solid black;
+	margin: 20px;
+	padding: 20px;
+	border: 1px solid black;
 }
 
 .signin-menu, .signup-menu {
-  display: inline-block;
-  padding: 10px 20px 10px 20px;
-  border: 1px solid rgb(221, 104, 104);
-  transition-duration: 0.2s;
+	display: inline-block;
+	padding: 10px 20px 10px 20px;
+	border: 1px solid rgb(221, 104, 104);
+	transition-duration: 0.2s;
 }
 
 .signup-menu {
-  margin-left: 5px;
+	margin-left: 5px;
 }
 
 .signin-menu:hover, .signup-menu:hover {
-  cursor: pointer;
-  color: white;
-  background-color: rgb(221, 104, 104);
+	cursor: pointer;
+	color: white;
+	background-color: rgb(221, 104, 104);
 }
 
 .form {
-  margin-top: 40px;
+	margin-top: 40px;
 }
 
 .inputs {
-  margin-bottom: 20px;
+	margin-bottom: 20px;
 }
 
 .submit-button {
-  display: inline-block;
-  padding: 10px 20px;
-  font-size: large;
-  color: white;
-  background-color: rgb(221, 104, 104);
-  border: none;
-  transition-duration: 0.2s;
+	display: inline-block;
+	padding: 10px 20px;
+	font-size: large;
+	color: white;
+	background-color: rgb(221, 104, 104);
+	border: none;
+	transition-duration: 0.2s;
 }
 
 .submit-button:hover {
-  cursor: pointer;
-  background-color: rgb(250, 96, 96);
+	cursor: pointer;
+	background-color: rgb(250, 96, 96);
 }
 
 .Main {
-  height: 100%;
+	height: 100%;
+	display: grid;
+	grid-template-columns: 70px auto;
+	color: white;
+}
+
+.Rooms {
+	padding: 10px;
+	background-color: rgb(32, 34, 37);;
+	overflow: hidden;
+}
+
+.EachRoom {
+	margin-bottom: 10px;
+	height: 50px;
+}
+
+.room-images {
+	display: block;
+	height: 50px;
+	width: 50px;
+	border-radius: 50%;
+	background-color: #36393F;
+	transition-duration: 0.4s;
+}
+
+.room-images:hover {
+	cursor: pointer;
+	background-color: #515458;
+}
+
+.InRoom {
+	display: flex;
+	flex-direction: row;
+}
+
+.Channels {
+	padding: 10px;
+	width: 240px;
+	background-color: rgb(47, 49, 54);
+}
+
+.InChannel {
+	width: 100%;
+}
+
+.InChannelHeader {
+	background-color: #36393f;
+	height: 48px;
+}
+
+.InChannelBody {
+	height: 100%;
+	display: flex;
+	flex-direction: row;
+}
+
+.ChatWindow {
+	width: 100%;
+	background-color: rgb(54, 57, 63);;
+}
+
+.Members {
+	width: 240px;
+	background-color: #2F3136;
 }

@@ -1,5 +1,8 @@
 import React from 'react';
 
+import Rooms from './Rooms';
+import InRoom from './InRoom';
+
 export default class Main extends React.Component {
 
     constructor(props) {
@@ -9,7 +12,8 @@ export default class Main extends React.Component {
     render() {
         return (
             <div className="Main">
-                This is Main
+                <Rooms />
+                <InRoom />                
             </div>
         )
     }
