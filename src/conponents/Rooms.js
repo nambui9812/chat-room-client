@@ -12,10 +12,6 @@ const EachRoom = () => {
 
 export default class Rooms extends React.Component {
 
-    constructor(props) {
-        super(props);
-    }
-
     render() {
         const keys = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
 

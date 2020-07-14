@@ -1,4 +1,7 @@
+// Require packages
 import React from 'react';
+
+import { register } from '../actions/UserAction';
 
 export default class SignUp extends React.Component {
 
@@ -6,8 +9,7 @@ export default class SignUp extends React.Component {
         super(props);
 
         this.state = {
-            firstName: '',
-            lastName: '',
+            name: '',
             username: '',
             password: ''
         };
@@ -22,29 +24,24 @@ export default class SignUp extends React.Component {
     onSubmitHandle = (e) => {
         e.preventDefault();
 
-        alert(`Username is: ${this.state.username} & Password is: ${this.state.password}`);
+        const body = {
+            name: this.state.name,
+            username: this.state.username,
+            password: this.state.password
+        };
+
+        register(body);
     }
 
     render() {
         return (
             <form className="SignUp" onSubmit={(e) => this.onSubmitHandle(e)}>
                 <div className="inputs">
-                    <label htmlFor="firstName" >First name: <input
-                            id="firstName"
-                            name="firstName"
+                    <label htmlFor="name" >Name: <input
+                            id="name"
+                            name="name"
                             type="text"
-                            value={this.state.firstName}
-                            onChange={(e) => this.onChangeHandle(e)}
-                        />
-                    </label>
-                </div>
-
-                <div className="inputs">
-                    <label htmlFor="lastName">Last name: <input
-                            id="lastName"
-                            name="lastName"
-                            type="text"
-                            value={this.state.lastName}
+                            value={this.state.name}
                             onChange={(e) => this.onChangeHandle(e)}
                         />
                     </label>

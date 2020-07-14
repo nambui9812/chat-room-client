@@ -152,6 +152,7 @@
 .InChannelHeader {
 	background-color: #36393f;
 	height: 48px;
+	border-bottom: 1px solid black;
 }
 
 .InChannelBody {

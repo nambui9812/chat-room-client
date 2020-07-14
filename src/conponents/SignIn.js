@@ -1,4 +1,7 @@
+// Require packages
 import React from 'react';
+
+import { login } from '../actions/UserAction';
 
 export default class SignIn extends React.Component {
 
@@ -20,7 +23,12 @@ export default class SignIn extends React.Component {
     onSubmitHandle = (e) => {
         e.preventDefault();
 
-        alert(`Username is: ${this.state.username} & Password is: ${this.state.password}`);
+        const body = {
+            username: this.state.username,
+            password: this.state.password
+        };
+        
+        login(body);
     }
 
     render() {
