@@ -140,9 +140,24 @@
 }
 
 .Channels {
-	padding: 10px;
 	width: 240px;
 	background-color: rgb(47, 49, 54);
+	display: flex;
+	flex-direction: column;
+}
+
+.ChannelsHeader {
+	height: 48px;
+}
+
+.ChannelsBody {
+	height: 100%;
+}
+
+.ChannelsFooter {
+	height: 52px;
+	background-color: #202225;
+	padding: 8px;
 }
 
 .InChannel {

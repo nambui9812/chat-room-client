@@ -1,11 +1,17 @@
 import React from 'react';
 
+import ChannelsHeader from './ChannelsHeader';
+import ChannelsBody from './ChannelsBody';
+import ChannelsFooter from './ChannelsFooter';
+
 export default class Channels extends React.Component {
 
     render() {
         return (
             <div className="Channels">
-                This is all Channels
+                <ChannelsHeader />
+                <ChannelsBody />
+                <ChannelsFooter />
             </div>
         )
     }
