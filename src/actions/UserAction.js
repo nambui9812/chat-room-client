@@ -13,6 +13,7 @@ import {
     AUTH_ERROR
 } from './types';
 
+// Load user
 export const loadUser = (token) => {
     const config = {
         headers: {
@@ -30,7 +31,6 @@ export const loadUser = (token) => {
             })
         })
         .catch(err => {
-            alert(err.response.data.messages)
             store.dispatch({
                 type: AUTH_ERROR
             });
@@ -64,7 +64,7 @@ export const register = ({ name, username, password }) => {
                 type: REGISTER_FAIL
             });
         })
-}
+};
 
 // Login
 export const login = ({ username, password }) => {

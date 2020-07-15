@@ -1,7 +1,7 @@
 // Require packages
 import { createStore } from 'redux';
-import CombineReducer from './reducers/CombineReducer';
+import CombineReducers from './reducers/CombineReducers';
 
-const store = createStore(CombineReducer);
+const store = createStore(CombineReducers);
 
 export default store;

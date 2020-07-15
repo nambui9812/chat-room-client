@@ -1,18 +1,20 @@
 import React from 'react';
+import { connect } from 'react-redux';
 
 import Rooms from './Rooms';
 import InRoom from './InRoom';
 
-import store from '../store';
 import { loadUser } from '../actions/UserAction';
 
-export default class Main extends React.Component {
+class Main extends React.Component {
 
     componentDidMount() {
-        loadUser(store.getState().UserReducer.token);
+        loadUser(this.props.UserReducer.token);
     }
 
     render() {
+        console.log('Render in Main');
+        
         return (
             <div className="Main">
                 <Rooms />
@@ -21,3 +23,9 @@ export default class Main extends React.Component {
         )
     }
 };
+
+const mapStateToProps = (state) => ({
+    UserReducer: state.UserReducer
+});
+
+export default connect(mapStateToProps)(Main);

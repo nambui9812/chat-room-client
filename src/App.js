@@ -1,4 +1,6 @@
 import React from 'react';
+import { Provider } from 'react-redux';
+
 import './App.css';
 
 import Home from './conponents/Home';
@@ -12,9 +14,11 @@ export default class App extends React.Component {
 		const { UserReducer } = store.getState();
 		
 		return (
-			<div className="App">
-				{UserReducer.token ? <Main /> : <Home />}
-			</div>
+			<Provider store={store}>
+				<div className="App">
+					{UserReducer.token ? <Main /> : <Home />}
+				</div>
+			</Provider>
 		)
 	}
 };

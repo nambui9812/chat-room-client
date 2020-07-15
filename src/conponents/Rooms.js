@@ -1,24 +1,41 @@
 import React from 'react';
+import { connect } from 'react-redux';
 
 import logo from '../logo.svg';
 
-const EachRoom = () => {
+import { loadRooms } from '../actions/RoomAction';
+
+const EachRoom = (props) => {
+    const { room } = props;
+
     return (
         <div className="EachRoom">
-            <img className="room-images" src={logo} alt="Each room here" />
+            <img className="room-images" src={logo} alt={room.name} />
         </div>
     )
 }
 
-export default class Rooms extends React.Component {
+class Rooms extends React.Component {
+
+    componentDidMount() {
+        loadRooms(this.props.UserReducer.token);
+    }
 
     render() {
-        const keys = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
-
+        console.log('Render in Room');
+        const { rooms } = this.props.RoomReducer;
+        
         return (
             <div className="Rooms">
-                {keys.map(key => <EachRoom key={key} />)}
+                { rooms ? rooms.map((room, index) => <EachRoom key={index} room={room} />) : null }
             </div>
         )
     }
 };
+
+const mapStateToProps = (state) => ({
+    UserReducer: state.UserReducer,
+    RoomReducer: state.RoomReducer
+});
+
+export default connect(mapStateToProps)(Rooms);
