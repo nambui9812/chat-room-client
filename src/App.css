@@ -111,13 +111,17 @@
 
 .Rooms {
 	padding: 10px;
-	background-color: rgb(32, 34, 37);;
-	overflow: hidden;
+	background-color: rgb(32, 34, 37);
 }
 
 .EachRoom {
 	margin-bottom: 10px;
 	height: 50px;
+	position: relative;
+}
+
+.EachRoom-child {
+	overflow: visible;
 }
 
 .room-images {
@@ -133,6 +137,36 @@
 	cursor: pointer;
 	background-color: #515458;
 }
+
+.room-images:hover .room-name {
+	visibility: visible;
+}
+
+.room-name {
+	width: 120px;
+	background-color: black;
+	text-align: center;
+	border-radius: 6px;
+	padding: 5px 0;
+
+	position: absolute;
+	z-index: 100;
+	top: 24%;
+	left: 120%;
+}
+
+/*
+.room-name:after {
+	content: "";
+	position: absolute;
+	top: 50%;
+	right: 100%;
+	margin-top: -5px;
+	border-width: 5px;
+	border-style: solid;
+	border-color: transparent black transparent transparent;
+}
+*/
 
 .InRoom {
 	display: flex;

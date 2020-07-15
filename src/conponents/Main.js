@@ -13,8 +13,6 @@ class Main extends React.Component {
     }
 
     render() {
-        console.log('Render in Main');
-        
         return (
             <div className="Main">
                 <Rooms />

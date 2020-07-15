@@ -11,6 +11,7 @@ const EachRoom = (props) => {
     return (
         <div className="EachRoom">
             <img className="room-images" src={logo} alt={room.name} />
+            <span className="room-name">{room.name}</span>
         </div>
     )
 }
@@ -22,7 +23,6 @@ class Rooms extends React.Component {
     }
 
     render() {
-        console.log('Render in Room');
         const { rooms } = this.props.RoomReducer;
         
         return (
