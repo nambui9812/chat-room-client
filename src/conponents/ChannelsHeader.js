@@ -5,7 +5,7 @@ export default class ChannelsHeader extends React.Component {
     render() {
         return (
             <div className="ChannelsHeader">
-                This is channels header
+                Channels Header
             </div>
         )
     }

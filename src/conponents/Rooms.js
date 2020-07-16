@@ -1,25 +1,16 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import logo from '../logo.svg';
+import EachRoom from './EachRoom';
 
 import { loadRooms } from '../actions/RoomAction';
 
-const EachRoom = (props) => {
-    const { room } = props;
-
-    return (
-        <div className="EachRoom">
-            <img className="room-images" src={logo} alt={room.name} />
-            <span className="room-name">{room.name}</span>
-        </div>
-    )
-}
-
 class Rooms extends React.Component {
 
-    componentDidMount() {
-        loadRooms(this.props.UserReducer.token);
+    componentDidUpdate(preProps) {
+        if (this.props.UserReducer !== preProps.UserReducer) {
+            loadRooms(this.props.UserReducer.token);
+        }
     }
 
     render() {

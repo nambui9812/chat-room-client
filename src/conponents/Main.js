@@ -23,7 +23,8 @@ class Main extends React.Component {
 };
 
 const mapStateToProps = (state) => ({
-    UserReducer: state.UserReducer
+    UserReducer: state.UserReducer,
+    RoomReducer: state.RoomReducer
 });
 
 export default connect(mapStateToProps)(Main);

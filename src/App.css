@@ -182,10 +182,13 @@
 
 .ChannelsHeader {
 	height: 48px;
+	text-align: center;
+	padding: 5px;
 }
 
 .ChannelsBody {
 	height: 100%;
+	padding: 5px;
 }
 
 .ChannelsFooter {
@@ -201,6 +204,7 @@
 .InChannelHeader {
 	background-color: #36393f;
 	height: 48px;
+	padding: 5px;
 	border-bottom: 1px solid black;
 }
 

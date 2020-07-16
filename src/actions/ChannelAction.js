@@ -3,14 +3,14 @@ import axios from 'axios';
 import store from '../store';
 
 import {
-    //ROOMS_LOADING,
-    ROOMS_LOADED,
-    ROOMS_LOADED_FAIL,
-    SET_ROOM_ID
+    //CHANNELS_LOADING,
+    CHANNELS_LOADED,
+    CHANNELS_LOADED_FAIL,
+    SET_CHANNEL_ID
 } from './types';
 
-// Load rooms
-export const loadRooms = (userId) => {
+// Load channels
+export const loadChannels = (userId, roomId) => {
     const config = {
         headers: {
             'Authorization': userId
@@ -18,26 +18,26 @@ export const loadRooms = (userId) => {
     };
 
     axios
-        .get('/api/rooms/user/', config)
+        .get(`/api/channels/room/${roomId}`, config)
         .then(res => {
             store.dispatch({
-                type: ROOMS_LOADED,
+                type: CHANNELS_LOADED,
                 payload: res.data.data
             });
         })
         .catch(err => {
             console.log(err);
             store.dispatch({
-                type: ROOMS_LOADED_FAIL
+                type: CHANNELS_LOADED_FAIL
             });
         })
     
 };
 
-// Set current room id
-export const setCurrentRoomId = (roomId) => {
+// Set current channel id
+export const setCurrentChannelId = (channelId) => {
     store.dispatch({
-        type: SET_ROOM_ID,
-        payload: roomId
+        type: SET_CHANNEL_ID,
+        payload: channelId
     })
 };
