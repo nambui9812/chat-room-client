@@ -10,10 +10,10 @@ import {
 } from './types';
 
 // Load channels
-export const loadChannels = (userId, roomId) => {
+export const loadChannels = (token, roomId) => {
     const config = {
         headers: {
-            'Authorization': userId
+            'Authorization': token
         }
     };
 
@@ -26,7 +26,7 @@ export const loadChannels = (userId, roomId) => {
             });
         })
         .catch(err => {
-            console.log(err);
+            console.log(err.response.data.message);
             store.dispatch({
                 type: CHANNELS_LOADED_FAIL
             });

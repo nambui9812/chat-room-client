@@ -183,12 +183,24 @@
 .ChannelsHeader {
 	height: 48px;
 	text-align: center;
-	padding: 5px;
+	padding: 8px;
 }
 
 .ChannelsBody {
 	height: 100%;
-	padding: 5px;
+	padding: 8px;
+	font-size: 15px;
+}
+
+.EachChannel {
+	margin-bottom: 10px;
+	color: rgb(175, 175, 175);
+}
+
+.EachChannel:hover {
+	cursor: pointer;
+	color: white;
+	background-color: rgb(54, 57, 63);
 }
 
 .ChannelsFooter {
@@ -216,7 +228,48 @@
 
 .ChatWindow {
 	width: 100%;
-	background-color: rgb(54, 57, 63);;
+	background-color: rgb(54, 57, 63);
+	display: flex;
+	flex-direction: column;
+}
+
+.Messages {
+	height: 90%;
+	padding: 8px;
+	overflow: visible;
+}
+
+.EachMessage {
+	margin-bottom: 20px;
+}
+
+.MessageInput {
+	height: 52px;
+	padding: 8px;
+	display: flex;
+	flex-direction: row;
+}
+
+.message-input {
+	width: 100%;
+	height: 30px;
+	margin-right: 10px;
+	padding: 5px;
+}
+
+.send-button {
+	display: inline-block;
+	width: 70px;
+	height: 30px;
+	background-color: #202225 ;
+	color: white;
+	border: none;
+	transition-duration: 0.4;
+}
+
+.send-button:hover {
+	cursor: pointer;
+	background-color: #55585c;
 }
 
 .Members {

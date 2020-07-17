@@ -10,10 +10,10 @@ import {
 } from './types';
 
 // Load rooms
-export const loadRooms = (userId) => {
+export const loadRooms = (token) => {
     const config = {
         headers: {
-            'Authorization': userId
+            'Authorization': token
         }
     };
 
@@ -26,7 +26,7 @@ export const loadRooms = (userId) => {
             });
         })
         .catch(err => {
-            console.log(err);
+            console.log(err.response.data.message);
             store.dispatch({
                 type: ROOMS_LOADED_FAIL
             });

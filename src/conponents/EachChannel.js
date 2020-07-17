@@ -12,7 +12,7 @@ class EachChannel extends React.Component {
         const { channel } = this.props;
 
         return (
-            <div className="EachChannel">
+            <div className="EachChannel" onClick={() => this.onClickHandle()}>
                 # {channel.name}
             </div>
         )

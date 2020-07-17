@@ -1,12 +1,18 @@
 import React from 'react';
 
-export default class ChatWindow extends React.Component {
+import Messages from './Messages';
+import MessageInput from './MessageInput';
+
+class ChatWindow extends React.Component {
 
     render() {
         return (
             <div className="ChatWindow">
-                This is chat window
+                <Messages />
+                <MessageInput />
             </div>
         )
     }
 };
+
+export default ChatWindow;
