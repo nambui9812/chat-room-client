@@ -112,6 +112,16 @@
 .Rooms {
 	padding: 10px;
 	background-color: rgb(32, 34, 37);
+	display: flex;
+	flex-direction: column;
+}
+
+.logout {
+	height: 60px;
+}
+
+.rooms {
+	height: 100%;
 }
 
 .EachRoom {

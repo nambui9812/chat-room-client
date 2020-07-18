@@ -4,7 +4,8 @@ import {
     MESSAGES_LOADED_FAIL,
     SET_MESSAGE,
     SEND_MESSAGE,
-    SEND_MESSAGE_FAIL
+    SEND_MESSAGE_FAIL,
+    CLEAR_MESSAGE_REDUCER
 } from '../actions/types';
 
 const initialState = {
@@ -35,6 +36,7 @@ export default function MessageReducer(state = initialState, action) {
 
         case SEND_MESSAGE_FAIL:
         case MESSAGES_LOADED_FAIL:
+        case CLEAR_MESSAGE_REDUCER:
             return {
                 ...state,
                 currentMessage: '',

@@ -2,11 +2,15 @@ import React from 'react';
 
 import logo from '../logo.svg';
 
+import { clearMessageReducer } from '../actions/MessageAction';
+import { clearChannelReducer } from '../actions/ChannelAction';
 import { setCurrentRoomId } from '../actions/RoomAction';
 
 class EachRoom extends React.Component {
 
     onClickHandle = () => {
+        clearMessageReducer();
+        clearChannelReducer();
         setCurrentRoomId(this.props.room.id);
     }
     

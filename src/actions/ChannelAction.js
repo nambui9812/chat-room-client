@@ -6,7 +6,9 @@ import {
     //CHANNELS_LOADING,
     CHANNELS_LOADED,
     CHANNELS_LOADED_FAIL,
-    SET_CHANNEL_ID
+    SET_CHANNEL_ID,
+    CLEAR_CURRENT_CHANNEL_ID,
+    CLEAR_CHANNEL_REDUCER
 } from './types';
 
 // Load channels
@@ -26,7 +28,7 @@ export const loadChannels = (token, roomId) => {
             });
         })
         .catch(err => {
-            console.log(err.response.data.message);
+            console.log(err.response.data.messages);
             store.dispatch({
                 type: CHANNELS_LOADED_FAIL
             });
@@ -40,4 +42,18 @@ export const setCurrentChannelId = (channelId) => {
         type: SET_CHANNEL_ID,
         payload: channelId
     })
+};
+
+// Clear current channal id
+export const clearCurrentChannelId = () => {
+    store.dispatch({
+        type: CLEAR_CURRENT_CHANNEL_ID
+    });
+};
+
+// Clear
+export const clearChannelReducer = () => {
+    store.dispatch({
+        type: CLEAR_CHANNEL_REDUCER
+    });
 };

@@ -2,7 +2,9 @@ import {
     //CHANNELS_LOADING,
     CHANNELS_LOADED,
     CHANNELS_LOADED_FAIL,
-    SET_CHANNEL_ID
+    SET_CHANNEL_ID,
+    CLEAR_CURRENT_CHANNEL_ID,
+    CLEAR_CHANNEL_REDUCER
 } from '../actions/types';
 
 const initialSate = {
@@ -24,7 +26,14 @@ export default function ChannelReducer(state = initialSate, action) {
                 currentChannelId: action.payload
             };
 
+        case CLEAR_CURRENT_CHANNEL_ID:
+            return {
+                ...state,
+                currentChannelId: null
+            };
+
         case CHANNELS_LOADED_FAIL:
+        case CLEAR_CHANNEL_REDUCER:
             return {
                 ...state,
                 channels: null,

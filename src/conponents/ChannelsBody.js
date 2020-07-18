@@ -9,6 +9,7 @@ class ChannelsBody extends React.Component {
 
     componentDidUpdate(preProps) {
         if (this.props.RoomReducer !== preProps.RoomReducer) {
+            console.log(this.props.RoomReducer.currentRoomId);
             loadChannels(this.props.UserReducer.token, this.props.RoomReducer.currentRoomId);
         }
     }

@@ -6,7 +6,9 @@ import {
     //ROOMS_LOADING,
     ROOMS_LOADED,
     ROOMS_LOADED_FAIL,
-    SET_ROOM_ID
+    SET_ROOM_ID,
+    CLEAR_CURRENT_ROOM_ID,
+    CLEAR_ROOM_REDUCER
 } from './types';
 
 // Load rooms
@@ -26,7 +28,7 @@ export const loadRooms = (token) => {
             });
         })
         .catch(err => {
-            console.log(err.response.data.message);
+            console.log(err.response.data.messages);
             store.dispatch({
                 type: ROOMS_LOADED_FAIL
             });
@@ -39,5 +41,19 @@ export const setCurrentRoomId = (roomId) => {
     store.dispatch({
         type: SET_ROOM_ID,
         payload: roomId
-    })
+    });
+};
+
+// Clear current room id
+export const clearCurrentRoomId = () => {
+    store.dispatch({
+        type: CLEAR_CURRENT_ROOM_ID
+    });
+};
+
+// Clear
+export const clearRoomReducer = () => {
+    store.dispatch({
+        type: CLEAR_ROOM_REDUCER
+    });
 };

@@ -8,7 +8,8 @@ import {
     MESSAGES_LOADED_FAIL,
     SET_MESSAGE,
     SEND_MESSAGE,
-    SEND_MESSAGE_FAIL
+    SEND_MESSAGE_FAIL,
+    CLEAR_MESSAGE_REDUCER
 } from './types';
 
 // Load messages
@@ -28,7 +29,7 @@ export const loadMessages = (token, channelId) => {
             });
         })
         .catch(err => {
-            console.log(err.response.data.message);
+            console.log(err.response.data.messages);
             store.dispatch({
                 type: MESSAGES_LOADED_FAIL
             });
@@ -65,9 +66,16 @@ export const sendMessage = ({ token, roomId, channelId, content }) => {
             });
         })
         .catch(err => {
-            console.log(err.response.data.message);
+            console.log(err.response.data.messages);
             store.dispatch({
                 type: SEND_MESSAGE_FAIL
             });
         })
+};
+
+// Clear
+export const clearMessageReducer = () => {
+    store.dispatch({
+        type: CLEAR_MESSAGE_REDUCER
+    });
 };

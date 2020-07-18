@@ -10,7 +10,12 @@ import {
     LOGIN_SUCCESS,
     LOGIN_FAIL,
     LOGOUT_SUCCESS,
-    AUTH_ERROR
+    AUTH_ERROR,
+    CLEAR_USER_REDUCER,
+    CLEAR_MESSAGE_REDUCER,
+    CLEAR_MEMBER_REDUCER,
+    CLEAR_CHANNEL_REDUCER,
+    CLEAR_ROOM_REDUCER
 } from './types';
 
 // Load user
@@ -31,6 +36,7 @@ export const loadUser = (token) => {
             })
         })
         .catch(err => {
+            console.log(err.response.data.messages)
             store.dispatch({
                 type: AUTH_ERROR
             });
@@ -95,8 +101,32 @@ export const login = ({ username, password }) => {
         })
 };
 
+// Log out
 export const logout = () => {
     store.dispatch({
+        type: CLEAR_MESSAGE_REDUCER
+    });
+
+    store.dispatch({
+        type: CLEAR_MEMBER_REDUCER
+    });
+
+    store.dispatch({
+        type: CLEAR_CHANNEL_REDUCER
+    });
+
+    store.dispatch({
+        type: CLEAR_ROOM_REDUCER
+    });
+
+    store.dispatch({
         type: LOGOUT_SUCCESS
+    });
+};
+
+// Clear
+export const clearUserReducer = () => {
+    store.dispatch({
+        type: CLEAR_USER_REDUCER
     });
 };

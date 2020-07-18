@@ -5,7 +5,8 @@ import {
     LOGIN_SUCCESS,
     LOGIN_FAIL,
     LOGOUT_SUCCESS,
-    AUTH_ERROR
+    AUTH_ERROR,
+    CLEAR_USER_REDUCER
 } from '../actions/types';
 
 const initialState = {
@@ -33,6 +34,7 @@ export default function UserReducer(state = initialState, action) {
         case REGISTER_FAIL:
         case LOGIN_FAIL:
         case LOGOUT_SUCCESS:
+        case CLEAR_USER_REDUCER:
             return {
                 ...state,
                 token: null,
