@@ -1,8 +1,14 @@
 import React from 'react';
 import { Provider } from 'react-redux';
+import {
+	BrowserRouter as Router,
+	Switch,
+	Route
+} from 'react-router-dom';
 
 import './App.css';
 
+import Introduction from './conponents/Introduction';
 import Home from './conponents/Home';
 import Main from './conponents/Main';
 
@@ -15,9 +21,19 @@ export default class App extends React.Component {
 		
 		return (
 			<Provider store={store}>
-				<div className="App">
-					{UserReducer.token ? <Main /> : <Home />}
-				</div>
+				<Router>
+					<div className="App">
+						<Switch>
+							<Route path="/app">
+								{UserReducer.token ? <Main /> : <Home />}
+							</Route>
+
+							<Route path="/">
+								<Introduction />
+							</Route>
+						</Switch>					
+					</div>
+				</Router>
 			</Provider>
 		)
 	}
