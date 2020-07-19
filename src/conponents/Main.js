@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 
 import Rooms from './Rooms';
 import InRoom from './InRoom';
+import EmptyRoom from './EmptyRoom';
 
 import { loadUser, clearUserReducer } from '../actions/UserAction';
 
@@ -21,7 +22,7 @@ class Main extends React.Component {
         return (
             <div className="Main">
                 <Rooms />
-                <InRoom />                
+                {this.props.RoomReducer.currentRoomId ? <InRoom /> : <EmptyRoom />}
             </div>
         )
     }

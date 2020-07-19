@@ -17,8 +17,7 @@ export default function RoomReducer(state = initialState, action) {
         case ROOMS_LOADED:
             return {
                 ...state,
-                rooms: action.payload,
-                currentRoomId: action.payload[0].id
+                rooms: action.payload
             };
 
         case SET_ROOM_ID:

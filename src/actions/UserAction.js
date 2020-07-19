@@ -36,7 +36,6 @@ export const loadUser = (token) => {
             })
         })
         .catch(err => {
-            console.log(err.response.data.messages)
             store.dispatch({
                 type: AUTH_ERROR
             });

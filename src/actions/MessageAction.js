@@ -29,7 +29,6 @@ export const loadMessages = (token, channelId) => {
             });
         })
         .catch(err => {
-            console.log(err.response.data.messages);
             store.dispatch({
                 type: MESSAGES_LOADED_FAIL
             });

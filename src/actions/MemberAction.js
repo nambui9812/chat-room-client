@@ -26,7 +26,6 @@ export const loadMembers = (token, roomId) => {
             });
         })
         .catch(err => {
-            console.log(err.response.data.messages);
             store.dispatch({
                 type: MEMBERS_LOADED_FAIL
             });

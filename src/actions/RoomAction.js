@@ -28,7 +28,6 @@ export const loadRooms = (token) => {
             });
         })
         .catch(err => {
-            console.log(err.response.data.messages);
             store.dispatch({
                 type: ROOMS_LOADED_FAIL
             });

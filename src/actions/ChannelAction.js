@@ -28,7 +28,6 @@ export const loadChannels = (token, roomId) => {
             });
         })
         .catch(err => {
-            console.log(err.response.data.messages);
             store.dispatch({
                 type: CHANNELS_LOADED_FAIL
             });
