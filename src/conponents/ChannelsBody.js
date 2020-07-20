@@ -7,9 +7,12 @@ import { loadChannels } from '../actions/ChannelAction';
 
 class ChannelsBody extends React.Component {
 
+    componentDidMount() {
+        loadChannels(this.props.UserReducer.token, this.props.RoomReducer.currentRoomId);
+    }
+
     componentDidUpdate(preProps) {
         if (this.props.RoomReducer !== preProps.RoomReducer) {
-            console.log(this.props.RoomReducer.currentRoomId);
             loadChannels(this.props.UserReducer.token, this.props.RoomReducer.currentRoomId);
         }
     }

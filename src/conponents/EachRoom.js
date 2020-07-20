@@ -1,6 +1,6 @@
 import React from 'react';
 
-import logo from '../logo.svg';
+import logo from '../images/logo.svg';
 
 import { clearMessageReducer } from '../actions/MessageAction';
 import { clearChannelReducer } from '../actions/ChannelAction';

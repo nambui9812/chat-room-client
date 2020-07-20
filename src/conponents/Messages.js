@@ -7,11 +7,13 @@ import { loadMessages } from '../actions/MessageAction';
 
 class Messages extends React.Component {
 
+    componentDidMount() {
+        loadMessages(this.props.UserReducer.token, this.props.ChannelReducer.currentChannelId);
+    }
+
     componentDidUpdate(preProps) {
         if (this.props.ChannelReducer !== preProps.ChannelReducer) {
-            if (this.props.ChannelReducer.currentChannelId) {
-                loadMessages(this.props.UserReducer.token, this.props.ChannelReducer.currentChannelId);
-            }
+            loadMessages(this.props.UserReducer.token, this.props.ChannelReducer.currentChannelId);
         }
     }
 

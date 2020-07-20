@@ -116,8 +116,25 @@
 	flex-direction: column;
 }
 
-.logout {
+.user, .logout {
 	height: 60px;
+	margin-bottom: 5px;
+}
+
+.user-icon, .logout-icon {
+	height: 50px;
+	width: 50px;
+	border-radius: 50%;
+	background-color: #36393F;
+	fill: rgb(146, 146, 146);
+	transition-duration: 0.4s;
+
+}
+
+.user-icon:hover, .logout-icon:hover {
+	cursor: pointer;
+	background-color: #515458;
+	fill: rgb(192, 192, 192);
 }
 
 .rooms {
@@ -200,15 +217,19 @@
 
 .Channels {
 	width: 240px;
+	height: 100%;
 	background-color: rgb(47, 49, 54);
 	display: flex;
 	flex-direction: column;
+	flex: 0 0 auto;
 }
 
 .ChannelsHeader {
-	height: 48px;
+	flex-basis: 50px;
 	text-align: center;
 	padding: 8px;
+	font-size: 20px;
+	border-bottom: 1px solid rgb(71, 71, 71);
 }
 
 .ChannelsBody {
@@ -238,10 +259,27 @@
 	width: 100%;
 }
 
+.EmptyChannel {
+	color: rgb(167, 167, 167);
+	background-color: rgb(54, 57, 63);
+	height: 100%;
+	text-align: center;
+	position: relative;
+}
+
+.EmptyChannel p {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	-ms-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+}
+
 .InChannelHeader {
 	background-color: #36393f;
 	height: 48px;
-	padding: 5px;
+	padding: 8px;
+	font-size: 20px;
 	border-bottom: 1px solid black;
 }
 

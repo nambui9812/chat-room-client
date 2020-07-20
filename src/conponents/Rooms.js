@@ -6,7 +6,8 @@ import EachRoom from './EachRoom';
 import { logout } from '../actions/UserAction';
 import { loadRooms } from '../actions/RoomAction';
 
-import logo from '../logo.svg';
+import { ReactComponent as UserIcon } from '../images/user.svg';
+import { ReactComponent as LogoutIcon } from '../images/logout.svg';
 
 class Rooms extends React.Component {
 
@@ -30,8 +31,13 @@ class Rooms extends React.Component {
                 <div className="rooms">
                     { rooms ? rooms.map((room, index) => <EachRoom key={index} room={room} />) : null }
                 </div>
+
+                <div className="user">
+                    <UserIcon className="user-icon" />
+                </div>
+
                 <div className="logout">
-                    <img className="room-images" src={logo} alt="logout" onClick={() => this.logoutHandler()} />
+                    <LogoutIcon className="logout-icon" onClick={() => this.logoutHandler()} />
                 </div>
             </div>
         )

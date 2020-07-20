@@ -7,6 +7,10 @@ import { loadMembers } from '../actions/MemberAction';
 
 class Members extends React.Component {
 
+    componentDidMount() {
+        loadMembers(this.props.UserReducer.token, this.props.RoomReducer.currentRoomId);
+    }
+
     componentDidUpdate(preProps) {
         if (this.props.RoomReducer !== preProps.RoomReducer) {
             loadMembers(this.props.UserReducer.token, this.props.RoomReducer.currentRoomId);
