@@ -302,6 +302,19 @@
 	overflow-y: scroll;
 }
 
+.Messages::-webkit-scrollbar {
+	width: 10px;
+	transition-duration: 1s;
+}
+
+.Messages::-webkit-scrollbar:hover {
+	background-color: rgb(168, 168, 168);
+}
+
+.Messages::-webkit-scrollbar-thumb:hover {
+	background-color: rgb(92, 92, 92);
+}
+
 .EachMessage {
 	margin-bottom: 20px;
 }
