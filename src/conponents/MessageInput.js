@@ -3,6 +3,8 @@ import { connect } from 'react-redux';
 
 import { setMessage, sendMessage } from '../actions/MessageAction';
 
+import socket from '../socket';
+
 class MessageInput extends React.Component {
 
     onChangeHandler = (e) => {
@@ -18,6 +20,8 @@ class MessageInput extends React.Component {
             channelId: this.props.ChannelReducer.currentChannelId,
             content: this.props.MessageReducer.currentMessage
         }
+
+        socket.emit('message', body);
 
         sendMessage(body);
     }

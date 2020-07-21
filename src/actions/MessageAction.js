@@ -12,6 +12,15 @@ import {
     CLEAR_MESSAGE_REDUCER
 } from './types';
 
+import socket from '../socket';
+
+socket.on('message', message => {
+    store.dispatch({
+        type: SEND_MESSAGE,
+        payload: message
+    });
+});
+
 // Load messages
 export const loadMessages = (token, channelId) => {
     const config = {
@@ -58,12 +67,6 @@ export const sendMessage = ({ token, roomId, channelId, content }) => {
 
     axios
         .post('/api/messages/create', body, config)
-        .then(res => {
-            store.dispatch({
-                type: SEND_MESSAGE,
-                payload: res.data.data
-            });
-        })
         .catch(err => {
             console.log(err.response.data.messages);
             store.dispatch({

@@ -299,7 +299,7 @@
 .Messages {
 	height: 90%;
 	padding: 8px;
-	overflow: visible;
+	overflow-y: scroll;
 }
 
 .EachMessage {
