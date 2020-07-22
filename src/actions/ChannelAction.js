@@ -24,7 +24,7 @@ export const loadChannels = (token, roomId) => {
         .then(res => {
             store.dispatch({
                 type: CHANNELS_LOADED,
-                payload: res.data.data
+                payload: res.data.data.channels
             });
         })
         .catch(err => {

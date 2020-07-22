@@ -24,10 +24,6 @@ export default class App extends React.Component {
 				<Router>
 					<div className="App">
 						<Switch>
-							<Route path="/app/:roomId">
-								{UserReducer.token ? <Main /> : <Home />}
-							</Route>
-
 							<Route path="/app">
 								{UserReducer.token ? <Main /> : <Home />}
 							</Route>

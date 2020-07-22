@@ -24,7 +24,7 @@ export const loadRooms = (token) => {
         .then(res => {
             store.dispatch({
                 type: ROOMS_LOADED,
-                payload: res.data.data
+                payload: res.data.data.rooms
             });
         })
         .catch(err => {

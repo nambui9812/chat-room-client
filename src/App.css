@@ -107,6 +107,56 @@
 	display: grid;
 	grid-template-columns: 70px auto;
 	color: white;
+	position: relative;
+}
+
+.AddRoomModal {
+	position: absolute;
+	background-color: rgb(47, 49, 54);
+	width: 100%;
+	height: 100%;
+	z-index: 1;
+	padding: 20px;
+}
+
+.add-room-modal-header {
+	text-align: right;
+}
+
+.add-room-modal-body {
+	height: 100%;
+}
+
+.JoinRoom, .CreateRoom {
+	padding: 5px;
+	margin-top: 10px;
+}
+
+.join-room, .create-room {
+	display: inline-block;
+	border: 1px solid white;
+	padding: 10px;
+	margin-left: 10px;
+	transition-duration: 0.4s;
+	font-weight: bold;
+}
+
+.join-room:hover, .create-room:hover {
+	cursor: pointer;
+	background-color: white;
+	color: black;
+}
+
+.close-icon {
+	width: 30px;
+	height: auto;
+	fill: rgb(126, 126, 126);
+	transition-duration: 0.4s;
+}
+
+.close-icon:hover {
+	cursor: pointer;
+	fill: white;
 }
 
 .Rooms {
@@ -116,12 +166,12 @@
 	flex-direction: column;
 }
 
-.user, .logout {
+.icons {
 	height: 60px;
 	margin-bottom: 5px;
 }
 
-.user-icon, .logout-icon {
+.add-icon, .user-icon, .logout-icon {
 	height: 50px;
 	width: 50px;
 	border-radius: 50%;
@@ -131,7 +181,7 @@
 
 }
 
-.user-icon:hover, .logout-icon:hover {
+.add-icon:hover, .user-icon:hover, .logout-icon:hover {
 	cursor: pointer;
 	background-color: #515458;
 	fill: rgb(192, 192, 192);
@@ -230,6 +280,11 @@
 	padding: 8px;
 	font-size: 20px;
 	border-bottom: 1px solid rgb(71, 71, 71);
+}
+
+.ChannelsHeader p {
+	font-size: 10px;
+	color: rgb(207, 207, 207);
 }
 
 .ChannelsBody {

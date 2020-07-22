@@ -30,9 +30,10 @@ export const loadUser = (token) => {
     axios
         .get('/api/users/user', config)
         .then(res => {
+            console.log(res.data.data);
             store.dispatch({
                 type: USER_LOADED,
-                payload: res.data.data
+                payload: res.data.data.user
             })
         })
         .catch(err => {
@@ -60,7 +61,7 @@ export const register = ({ name, username, password }) => {
         .then(res => {
             store.dispatch({
                 type: REGISTER_SUCCESS,
-                payload: res.data.data
+                payload: res.data.data.token
             });
         })
         .catch(err => {
@@ -89,7 +90,7 @@ export const login = ({ username, password }) => {
         .then(res => {
             store.dispatch({
                 type: LOGIN_SUCCESS,
-                payload: res.data.data
+                payload: res.data.data.token
             });
         })
         .catch(err => {

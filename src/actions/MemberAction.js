@@ -22,7 +22,7 @@ export const loadMembers = (token, roomId) => {
         .then(res => {
             store.dispatch({
                 type: MEMBERS_LOADED,
-                payload: res.data.data
+                payload: res.data.data.members
             });
         })
         .catch(err => {

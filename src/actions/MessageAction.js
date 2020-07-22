@@ -34,7 +34,7 @@ export const loadMessages = (token, channelId) => {
         .then(res => {
             store.dispatch({
                 type: MESSAGES_LOADED,
-                payload: res.data.data
+                payload: res.data.data.messages
             });
         })
         .catch(err => {

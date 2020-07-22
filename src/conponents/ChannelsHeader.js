@@ -10,7 +10,8 @@ class ChannelsHeader extends React.Component {
 
         return (
             <div className="ChannelsHeader">
-                <p>{currentRoom.name}</p>
+                <h4>{currentRoom.name}</h4>
+                <p>ID: {currentRoom.id}</p>
             </div>
         )
     }

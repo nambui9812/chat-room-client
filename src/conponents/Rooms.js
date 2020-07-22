@@ -6,6 +6,7 @@ import EachRoom from './EachRoom';
 import { logout } from '../actions/UserAction';
 import { loadRooms } from '../actions/RoomAction';
 
+import { ReactComponent as AddIcon } from '../images/add.svg';
 import { ReactComponent as UserIcon } from '../images/user.svg';
 import { ReactComponent as LogoutIcon } from '../images/logout.svg';
 
@@ -32,11 +33,15 @@ class Rooms extends React.Component {
                     { rooms ? rooms.map((room, index) => <EachRoom key={index} room={room} />) : null }
                 </div>
 
-                <div className="user">
+                <div className="icons">
+                    <AddIcon className="add-icon" onClick={() => this.props.handleShowModal()}/>
+                </div>
+
+                <div className="icons">
                     <UserIcon className="user-icon" />
                 </div>
 
-                <div className="logout">
+                <div className="icons">
                     <LogoutIcon className="logout-icon" onClick={() => this.logoutHandler()} />
                 </div>
             </div>
