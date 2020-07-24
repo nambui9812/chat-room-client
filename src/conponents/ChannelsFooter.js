@@ -1,11 +1,13 @@
 import React from 'react';
 
+import { ReactComponent as SettingIcon } from '../images/settings.svg';
+
 export default class ChannelsFooter extends React.Component {
 
     render() {
         return (
             <div className="ChannelsFooter">
-                This is channels footer
+                <SettingIcon className='setting-icon' onClick={this.props.handleShowModal} />
             </div>
         )
     }

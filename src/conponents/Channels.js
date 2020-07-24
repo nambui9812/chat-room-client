@@ -11,7 +11,7 @@ export default class Channels extends React.Component {
             <div className="Channels">
                 <ChannelsHeader />
                 <ChannelsBody />
-                <ChannelsFooter />
+                <ChannelsFooter handleShowModal={this.props.handleShowModal} />
             </div>
         )
     }
