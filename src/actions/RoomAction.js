@@ -8,7 +8,11 @@ import {
     ROOMS_LOADED_FAIL,
     SET_ROOM_ID,
     CLEAR_CURRENT_ROOM_ID,
-    CLEAR_ROOM_REDUCER
+    CLEAR_ROOM_REDUCER,
+    JOIN_ROOM,
+    JOIN_ROOM_FAIL,
+    CREATE_ROOM,
+    CREATE_ROOM_FAIL
 } from './types';
 
 // Load rooms
@@ -51,13 +55,49 @@ export const clearCurrentRoomId = () => {
 };
 
 // Join room
-export const joinRoom = () => {
+export const joinRoom = ({ token, roomId, name }) => {
+    const config = {
+        headers: {
+            'Authorization': token
+        }
+    }
 
+    axios
+        .post('/api/members/create', { roomId, name }, config)
+        .then(res => {
+            store.dispatch({
+                type: JOIN_ROOM,
+                payload: res.data.data.room
+            });
+        })
+        .catch(err => {
+            store.dispatch({
+                type: JOIN_ROOM_FAIL
+            });
+        })
 };
 
 // Create room
-export const createRoom = () => {
+export const createRoom = ({ token, adminName, name }) => {
+    const config = {
+        headers: {
+            'Authorization': token
+        }
+    }
 
+    axios
+        .post('/api/rooms/create', { adminName, name }, config)
+        .then(res => {
+            store.dispatch({
+                type: CREATE_ROOM,
+                payload: res.data.data.room
+            });
+        })
+        .catch(err => {
+            store.dispatch({
+                type: CREATE_ROOM_FAIL
+            });
+        })
 };
 
 // Clear

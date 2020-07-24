@@ -4,7 +4,11 @@ import {
     ROOMS_LOADED_FAIL,
     SET_ROOM_ID,
     CLEAR_CURRENT_ROOM_ID,
-    CLEAR_ROOM_REDUCER
+    CLEAR_ROOM_REDUCER,
+    JOIN_ROOM,
+    JOIN_ROOM_FAIL,
+    CREATE_ROOM,
+    CREATE_ROOM_FAIL
 } from '../actions/types'
 
 const initialState = {
@@ -31,6 +35,22 @@ export default function RoomReducer(state = initialState, action) {
                 ...state,
                 currentRoomId: null
             }
+
+        case JOIN_ROOM:
+            return {
+                ...state,
+                rooms: [ ...state.rooms, action.payload ]
+            };
+
+        case CREATE_ROOM:
+            return {
+                ...state,
+                rooms: [ ...state.rooms, action.payload ]
+            };
+
+        case JOIN_ROOM_FAIL:
+        case CREATE_ROOM_FAIL:
+            return state;
 
         case ROOMS_LOADED_FAIL:
         case CLEAR_ROOM_REDUCER:

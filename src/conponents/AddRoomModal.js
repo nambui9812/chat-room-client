@@ -39,7 +39,7 @@ export default class AddRoomModal extends React.Component {
                         <div className="create-room" onClick={() => this.onCreateRoom()}>Create a new room</div>
                     </div>
                     <div className="add-room-form">
-                        { this.state.isJoinRoom ? <JoinRoom /> : <CreateRoom /> }
+                        { this.state.isJoinRoom ? <JoinRoom handleCloseModal={this.props.handleCloseModal} /> : <CreateRoom handleCloseModal={this.props.handleCloseModal} /> }
                     </div>
                 </div>
             </div>

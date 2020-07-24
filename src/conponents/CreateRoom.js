@@ -2,6 +2,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
+import { createRoom } from '../actions/RoomAction';
+
 class CreateRoom extends React.Component {
 
     constructor(props) {
@@ -29,6 +31,10 @@ class CreateRoom extends React.Component {
         };
         
         // Create room
+        createRoom(body);
+
+        // Close modal
+        this.props.handleCloseModal();
     }
 
     render() {

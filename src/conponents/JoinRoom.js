@@ -2,6 +2,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
+import { joinRoom } from '../actions/RoomAction';
+
 class JoinRoom extends React.Component {
 
     constructor(props) {
@@ -27,8 +29,12 @@ class JoinRoom extends React.Component {
             roomId: this.state.roomId,
             name: this.state.name
         };
-        
+
         // Join room
+        joinRoom(body);
+
+        // Close modal
+        this.props.handleCloseModal();
     }
 
     render() {
