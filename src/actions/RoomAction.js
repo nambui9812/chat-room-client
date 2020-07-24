@@ -50,6 +50,16 @@ export const clearCurrentRoomId = () => {
     });
 };
 
+// Join room
+export const joinRoom = () => {
+
+};
+
+// Create room
+export const createRoom = () => {
+
+};
+
 // Clear
 export const clearRoomReducer = () => {
     store.dispatch({
