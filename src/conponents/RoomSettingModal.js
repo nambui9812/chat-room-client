@@ -11,7 +11,15 @@ class RoomSettingModal extends React.Component {
                 </div>
 
                 <div className="room-setting-modal-body">
-                    Hello there
+                    <div className="room-setting-menu">
+                        <div>Channels</div>
+                        <div>Members</div>
+                        <div>Black list</div>
+                    </div>
+
+                    <div className="room-setting-config">
+                        Config
+                    </div>
                 </div>
             </div>
         )
