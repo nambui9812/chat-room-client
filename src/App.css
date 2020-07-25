@@ -351,11 +351,56 @@
 	padding: 0 10px;
 }
 
+.room-setting-option {
+	padding: 10px;
+	margin-bottom: 10px;
+	border: 0.5px solid rgb(116, 116, 116);
+	transition-duration: 0.4s;
+}
+
+.room-setting-option:hover {
+	cursor: pointer;
+	background-color: rgb(116, 116, 116);
+}
+
 .room-setting-config {
 	width: 100%;
 	padding-right: 10px;
 	padding-left: 50px;
 	border-left: 0.5px solid rgb(155, 155, 155);
+}
+
+.ChannelConfigBody {
+	margin-top: 20px;
+}
+
+.EachChannelConfig {
+	margin-bottom: 10px;
+}
+
+#channel-name {
+	width: 300px;
+	padding: 5px;
+}
+
+#create-channel-submit {
+	padding: 5px;
+}
+
+#create-channel-submit:hover {
+	cursor: pointer;
+}
+
+.delete-icon {
+	width: 10px;
+	height: 10px;
+	fill: rgb(146, 146, 146);
+	margin-left: 20px;
+}
+
+.delete-icon:hover {
+	cursor: pointer;
+	fill: white;
 }
 
 .EmptyChannel {

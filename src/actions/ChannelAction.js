@@ -8,7 +8,11 @@ import {
     CHANNELS_LOADED_FAIL,
     SET_CHANNEL_ID,
     CLEAR_CURRENT_CHANNEL_ID,
-    CLEAR_CHANNEL_REDUCER
+    CLEAR_CHANNEL_REDUCER,
+    CREATE_CHANNEL,
+    CREATE_CHANNEL_FAIL,
+    DELETE_CHANNEL,
+    DELETE_CHANNEL_FAIL
 } from './types';
 
 // Load channels
@@ -43,11 +47,56 @@ export const setCurrentChannelId = (channelId) => {
     })
 };
 
-// Clear current channal id
+// Clear current channel id
 export const clearCurrentChannelId = () => {
     store.dispatch({
         type: CLEAR_CURRENT_CHANNEL_ID
     });
+};
+
+// Create channel
+export const createChannel = ({ token, roomId, name }) => {
+    const config = {
+        headers: {
+            'Authorization': token
+        }
+    };
+
+    axios
+        .post('/api/channels/create', { roomId, name }, config)
+        .then(res => {
+            store.dispatch({
+                type: CREATE_CHANNEL,
+                payload: res.data.data.channel
+            });
+        })
+        .catch(err => {
+            store.dispatch({
+                type: CREATE_CHANNEL_FAIL
+            });
+        })
+};
+
+export const deleteChannel = ({ token, channelId }) => {
+    const config = {
+        headers: {
+            'Authorization': token
+        }
+    };
+
+    axios
+        .delete(`/api/channels/delete/${channelId}`, config)
+        .then(res => {
+            store.dispatch({
+                type: DELETE_CHANNEL,
+                payload: channelId
+            });
+        })
+        .catch(err => {
+            store.dispatch({
+                type: DELETE_CHANNEL_FAIL
+            });
+        })
 };
 
 // Clear
