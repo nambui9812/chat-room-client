@@ -441,7 +441,7 @@
 }
 
 .Messages {
-	height: 90%;
+	height: 100%;
 	padding: 8px;
 	overflow-y: scroll;
 }

@@ -43,7 +43,7 @@ class ChannelConfig extends React.Component {
                 </form>
 
                 <div className="ChannelConfigBody">
-                    { this.props.ChannelReducer.channels.map((channel, index) => <EachChannelConfig key={index} channel={channel} />) }
+                    { this.props.ChannelReducer.channels ? this.props.ChannelReducer.channels.map((channel, index) => <EachChannelConfig key={index} channel={channel} />) : null }
                 </div>
             </div>
         )
