@@ -374,7 +374,7 @@
 	margin-top: 20px;
 }
 
-.EachChannelConfig {
+.EachChannelConfig, .EachMemberConfig {
 	margin-bottom: 10px;
 }
 
@@ -461,6 +461,8 @@
 
 .EachMessage {
 	margin-bottom: 20px;
+	padding: 5px;
+	border: 0.5px solid rgb(92, 92, 92);
 }
 
 .MessageInput {

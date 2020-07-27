@@ -6,6 +6,8 @@ import {
     //MEMBERS_LOADING,
     MEMBERS_LOADED,
     MEMBERS_LOADED_FAIL,
+    DELETE_MEMBER,
+    DELETE_MEMBER_FAIL,
     CLEAR_MEMBER_REDUCER
 } from './types';
 
@@ -31,6 +33,29 @@ export const loadMembers = (token, roomId) => {
             });
         })
     
+};
+
+// Delete member
+export const deleteMember = ({ token, memberId }) => {
+    const config = {
+        headers: {
+            'Authorization': token
+        }
+    };
+
+    axios
+        .delete(`/api/members/delete/${memberId}`, config)
+        .then(res => {
+            store.dispatch({
+                type: DELETE_MEMBER,
+                payload: memberId
+            });
+        })
+        .catch(err => {
+            store.dispatch({
+                type: DELETE_MEMBER_FAIL
+            });
+        })
 };
 
 // Clear

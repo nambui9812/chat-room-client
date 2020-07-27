@@ -1,13 +1,15 @@
 import React from 'react';
+import { connect } from 'react-redux';
 
 class EachMessage extends React.Component {
     
     render() {
-        const { message } = this.props;
+        const { message, MemberReducer } = this.props;
+        const currentMember = MemberReducer.members.filter(member => member.userId === message.userId)[0];
 
         return (
             <div className="EachMessage">
-                <h4>User {message.userId} sent:</h4>
+                <h4>{currentMember ? currentMember.name : 'User with id ' + message.userId} sent:</h4><br />
                 <p>{message.content}</p>
             </div>
         )
@@ -15,4 +17,8 @@ class EachMessage extends React.Component {
 
 }
 
-export default EachMessage;
+const mapStateToProps = (state) => ({
+    MemberReducer: state.MemberReducer
+});
+
+export default connect(mapStateToProps)(EachMessage);
