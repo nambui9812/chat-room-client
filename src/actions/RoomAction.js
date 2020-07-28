@@ -12,7 +12,9 @@ import {
     JOIN_ROOM,
     JOIN_ROOM_FAIL,
     CREATE_ROOM,
-    CREATE_ROOM_FAIL
+    CREATE_ROOM_FAIL,
+    DELETE_ROOM,
+    DELETE_ROOM_FAIL
 } from './types';
 
 // Load rooms
@@ -99,6 +101,29 @@ export const createRoom = ({ token, adminName, name }) => {
             });
         })
 };
+
+// Delete room
+export const deleteRoom = ({ token, roomId }) => {
+    const config = {
+        headers: {
+            'Authorization': token
+        }
+    };
+
+    axios
+        .delete(`/api/rooms/delete/${roomId}`, config)
+        .then(res => {
+            store.dispatch({
+                type: DELETE_ROOM,
+                payload: roomId
+            });
+        })
+        .catch(err => {
+            store.dispatch({
+                type: DELETE_ROOM_FAIL
+            });
+        })
+}
 
 // Clear
 export const clearRoomReducer = () => {

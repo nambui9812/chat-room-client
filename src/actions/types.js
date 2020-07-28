@@ -22,6 +22,8 @@ export const JOIN_ROOM = 'JOIN_ROOM';
 export const JOIN_ROOM_FAIL = 'JOIN_ROOM_FAIL';
 export const CREATE_ROOM = 'CREATE_ROOM';
 export const CREATE_ROOM_FAIL = 'CREATE_ROOM_FAIL';
+export const DELETE_ROOM = 'DELETE_ROOM';
+export const DELETE_ROOM_FAIL = 'DELETE_ROOM_FAIL';
 export const CLEAR_ROOM_REDUCER = 'CLEAR_ROOM_REDUCER';
 
 // Channel

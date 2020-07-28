@@ -8,7 +8,9 @@ import {
     JOIN_ROOM,
     JOIN_ROOM_FAIL,
     CREATE_ROOM,
-    CREATE_ROOM_FAIL
+    CREATE_ROOM_FAIL,
+    DELETE_ROOM,
+    DELETE_ROOM_FAIL
 } from '../actions/types'
 
 const initialState = {
@@ -48,8 +50,15 @@ export default function RoomReducer(state = initialState, action) {
                 rooms: [ ...state.rooms, action.payload ]
             };
 
+        case DELETE_ROOM:
+            return {
+                ...state,
+                rooms: state.rooms.filter(room => room.id !== action.payload)
+            };
+
         case JOIN_ROOM_FAIL:
         case CREATE_ROOM_FAIL:
+        case DELETE_ROOM_FAIL:
             return state;
 
         case ROOMS_LOADED_FAIL:
